@@ -13,5 +13,6 @@ RUN curl --progress http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz | 
     cd .. && rm -rf ruby-2.1.2*
 
 RUN echo 'gem: --no-rdoc --no-ri' > ~/.gemrc && \
+    gem update --system && \
     gem install bundler
 
