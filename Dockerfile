@@ -9,7 +9,7 @@ RUN rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noar
 RUN curl --progress http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz | tar xz && \
     cd ruby-2.1.2 && \
     ./configure --disable-install-doc && \
-    make && make install && \
+    make -j2 && make install && \
     cd .. && rm -rf ruby-2.1.2*
 
 RUN echo 'gem: --no-rdoc --no-ri' > ~/.gemrc && \
